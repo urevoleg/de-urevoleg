@@ -1,2 +1,2 @@
-# de-urevoleg
-Self web site
+# de-urevoleg 🤘
+
