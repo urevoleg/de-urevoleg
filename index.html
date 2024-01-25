@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Мое резюме</title>
+    <title>Urevoleg</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
+        /* Стили для шапки */
+        .header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
         /* Стили для основной страницы */
         .section {
             padding: 50px;
@@ -13,44 +27,47 @@
         p {
             margin-bottom: 10px;
         }
-
-        /* Стили для футера */
-        footer {
-            background-color: #f2f2f2;
-            padding: 20px;
-            text-align: center;
-        }
-        footer img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
     </style>
-    <meta charset="UTF-8">
 </head>
 <body>
-    <div class="section">
-        <h2>О себе</h2>
-        <p>Здесь ваше описание о себе.</p>
-    </div>
-    <div class="section">
-        <h2>Опыт работы</h2>
-        <p>Здесь ваш опыт работы.</p>
-    </div>
-    <div class="section">
-        <h2>Курсы</h2>
-        <p>Здесь ваши пройденные курсы.</p>
-    </div>
-    <div class="section">
-        <h2>Последний пост из Telegram канала</h2>
-        <p id="telegram-post"></p>
-    </div>
-    <footer>
-        <img src="docs/de-meme.png" alt="Your Photo">
+    <div class="header">
+        <img src="docs/de-meme.png" alt="header-photo">
         <h3>DE-шная</h3>
-    </footer>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section">
+                    <h2>О себе</h2>
+                    <p>Здесь ваше описание о себе.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section">
+                    <h2>Опыт работы</h2>
+                    <p>Здесь ваш опыт работы.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section">
+                    <h2>Курсы</h2>
+                    <p>Здесь ваши пройденные курсы.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section">
+                    <h2>Последний пост из Telegram канала</h2>
+                    <p id="telegram-post"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
     <script>
         // Загрузка последнего поста из Telegram канала
         fetch('https://api.telegram.org/bot<your_bot_token>/getChatMessagesCount?chat_id=@double_data')
