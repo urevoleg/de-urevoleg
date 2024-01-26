@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Облако слов</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="tag-cloud" id="tag-cloud">
+    </div>
+
+    <script>
+        const words = [
+            "Старый добрый SQL",
+            "RDBS (Postgres, Oracle)",
+            "S3",
+            "Clickhouse",
+            "Greenplum",
+            "Airflow",
+            "Pentaho",
+            "Luigi",
+            "Datalens",
+            "Tableau",
+            "MetaBase",
+            "Модный Python",
+            "Pandas and Co",
+            "Cloud (Yandex, GCP)",
+            "Linux",
+            "Docker",
+            "Flask\\FastApi",
+            "Много статистики",
+            "Горсть тервера"
+        ];
+
+        const tagCloud = document.getElementById("tag-cloud");
+
+        words.forEach(word => {
+            const link = document.createElement("a");
+            link.href = "#";
+            link.textContent = word;
+            tagCloud.appendChild(link);
+        });
+    </script>
+</body>
+</html>
