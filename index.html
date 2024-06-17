@@ -222,6 +222,13 @@
             const link = document.createElement("a");
             link.href = "#";
             link.textContent = word;
+            if (word.includes("Clickhouse") ||
+                word.includes("dbt") ||
+                word.includes("Greenplum") ||
+                word.includes("Airflow")) {
+            link.style.background = "#6495ED"; // Голубой цвет
+        }
+            link.style.background = getRandomColor();
             tagCloud.appendChild(link);
         });
     </script>
