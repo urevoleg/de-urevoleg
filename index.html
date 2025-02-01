@@ -112,6 +112,42 @@
             height: 25px;
             margin-right: 10px;
         }
+
+        /* Добавляем стили для темной темы */
+        body.dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-theme .header {
+            background-color: #1f1f1f;
+        }
+        .dark-theme h3, .dark-theme h4 {
+            color: #ffffff;
+        }
+        .dark-theme .carousel-control-prev,
+        .dark-theme .carousel-control-next {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .dark-theme .tag-cloud a {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .dark-theme .tag-cloud a:hover {
+            background-color: #555;
+        }
+        .dark-theme .gray-link {
+            color: #ccc;
+        }
+        .dark-theme .gray-link:hover {
+            color: #fff;
+        }
+        .dark-theme .contact-info a {
+            color: #ccc;
+        }
+        .dark-theme .contact-info a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -127,6 +163,8 @@
                 <img src="docs/email_2164967.png" alt="Email">
                 email
             </a>
+            <!-- Кнопка переключения темы -->
+            <button id="theme-toggle" style="margin-left: 20px; padding: 5px 10px; cursor: pointer;">🌙</button>
         </div>
     </div>
 
@@ -280,6 +318,30 @@
             link.style.background = "#98C6FF"; // Голубой цвет
         }
             tagCloud.appendChild(link);
+        });
+    </script>
+    <script>
+        // Логика переключения темы
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Проверяем, есть ли сохраненная тема в localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark-theme') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        // Обработчик клика по кнопке
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark-theme');
+                themeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light-theme');
+                themeToggle.textContent = '🌙';
+            }
         });
     </script>
 </body>
